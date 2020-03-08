@@ -3,9 +3,54 @@
     <meta charset="utf-8">
     <title>Первая страничка</title>
     <script>
-      const name='Иван'
+      const name='Иван' 
+      const a = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+    [10, 11, 12]
+]
+    const b= [
+    [1, 2, 3, 4],
+    [5, 6, 7, 8],
+    [9, 10, 11, 12]
+]
+      function printMatrix(matrix){
+        for (let i = 0; i < matrix.length; i++) {
+            let row = '';
+            for (let j = 0; j < matrix[0].length; j++) {
+                row += '' + matrix[i][j] + ' ';
+            }
+            console.log('[ ' + row + ' ]');
+        }
+        console.log('\n')
+      }
+    function multiplyMatrices(a, b)
+      {
+        if (b.length == a[0].length) {
+            let result = [];
+
+            for (let i = 0; i < a.length; i++) {
+
+                result[i] = [];
+
+                for (let j = 0; j < b[0].length; j++) {
+
+                    let sum = 0;
+                    
+                    for (let k = 0; k < a[0].length; k++) {
+                        sum += a[i][k] * b[k][j];
+                    }
+                    result[i][j] = sum;
+                }
+            }
+            return result;
+        } else return null;
+        return null
+      }
       function hello(tt) {
-        alert('Привет' + name + '! ' + tt)
+        const c= multiplyMatrices(a, b)
+        printMatrix(c)
       }
     </script>
   </head>
